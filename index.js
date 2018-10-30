@@ -101,15 +101,8 @@ app.get('/getlogin/:token',(req,res) => {
     console.log("decoded",decoded)
     res.send(decoded)
 })
-<<<<<<< HEAD
 app.get('/gettickets/:offset/:segment',(req,res) => {
     db.executeQuery(query.getTickets({offset:req.params.offset,segment:req.params.segment}), result => {
-=======
-app.get('/getclients/:orderby/:ordertype/:offset/:segment',(req,res) => {
-    db.executeQuery(query.getClients({
-        orderby:req.params.orderby,ordertype:req.params.ordertype,offset:req.params.offset,segment:req.params.segment
-    }), result => {
->>>>>>> 7e01c4d3a2ccdba24f933e313d8813cc260e4bde
         res.send(result)
     })
 })
