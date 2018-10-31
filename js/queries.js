@@ -19,7 +19,7 @@ getTickets = (obj) => {
     sql+= 'left outer join ptps F on F.id=A.ptp_id '
     sql+= 'left outer join cores G on G.id=A.core_id '
     sql+= 'left outer join aps H on H.id=A.ap_id '
-    sql+= 'order by A.create_date asc '
+    sql+= 'order by A.create_date desc '
     sql+= 'limit '+obj.segment+','+obj.offset+' '
     console.log('GetTickets',sql)
     return sql
@@ -59,7 +59,7 @@ searchTickets = (obj) => {
     sql+= 'left outer join cores G on G.id=A.core_id '
     sql+= 'left outer join aps H on H.id=A.ap_id '
     sql+= 'where A.clientname like "%'+obj.name+'%" '
-    sql+= 'order by A.create_date asc '
+    sql+= 'order by A.create_date desc '
     sql+= 'limit '+obj.segment+','+obj.offset+' '
     console.log('GetTickets',sql)
     return sql
